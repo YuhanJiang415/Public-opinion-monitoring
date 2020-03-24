@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>舆情监测平台</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+    <!--[if lt IE 9]>
+    <script src='assets/javascripts/html5shiv.js' type='text/javascript'></script>
+    <script src="e-chart/echarts.js"></script>
+    <script src='e-chart/echarts-wordcloud.js'></script>
+    <![endif]-->
+    <link href='assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery ui -->
+    <link href='assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / switch buttons -->
+    <link href='assets/stylesheets/plugins/bootstrap_switch/bootstrap-switch.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / xeditable -->
+    <link href='assets/stylesheets/plugins/xeditable/bootstrap-editable.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / wysihtml5 (wysywig) -->
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery file upload -->
+    <link href='assets/stylesheets/plugins/jquery_fileupload/jquery.fileupload-ui.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / full calendar -->
+    <link href='assets/stylesheets/plugins/fullcalendar/fullcalendar.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / select2 -->
+    <link href='assets/stylesheets/plugins/select2/select2.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / mention -->
+    <link href='assets/stylesheets/plugins/mention/mention.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / tabdrop (responsive tabs) -->
+    <link href='assets/stylesheets/plugins/tabdrop/tabdrop.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jgrowl notifications -->
+    <link href='assets/stylesheets/plugins/jgrowl/jquery.jgrowl.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datatables -->
+    <link href='assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / dynatrees (file trees) -->
+    <link href='assets/stylesheets/plugins/dynatree/ui.dynatree.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / color picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_colorpicker/bootstrap-colorpicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datetime picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / daterange picker) -->
+    <link href='assets/stylesheets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flags (country flags) -->
+    <link href='assets/stylesheets/plugins/flags/flags.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / slider nav (address book) -->
+    <link href='assets/stylesheets/plugins/slider_nav/slidernav.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / fuelux (wizard) -->
+    <link href='assets/stylesheets/plugins/fuelux/wizard.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flatty theme -->
+    <link href='assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <!-- / demo -->
+    <link href='assets/stylesheets/demo.css' media='all' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class='contrast-red '>
+<header>
+    <div class='navbar'>
+        <div class='navbar-inner'>
+            <div class='container-fluid'>
+                <a class='brand' href='index.html'>
+                    <i class='icon-heart-empty'></i>
+                    <span class='hidden-phone'>菜单</span>
+                </a>
+                <a class='toggle-nav btn pull-left' href='#'>
+                    <i class='icon-reorder'></i>
+                </a>
+                <ul class='nav pull-right'>
+                    <li class='dropdown light only-icon'>
+                        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                            <i class='icon-adjust'></i>
+                        </a>
+                        <ul class='dropdown-menu color-settings'>
+                            <li class='color-settings-contrast-color'>
+                                <div class='color-title'>设置颜色</div>
+                                <a href="#" data-change-to="contrast-red"><i class='icon-adjust text-red'></i>
+                                    红
+                                    <small>(默认)</small>
+                                </a>
+                                <a href="#" data-change-to="contrast-blue"><i class='icon-adjust text-blue'></i>
+                                    蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-orange"><i class='icon-adjust text-orange'></i>
+                                    橙
+                                </a>
+                                <a href="#" data-change-to="contrast-purple"><i class='icon-adjust text-purple'></i>
+                                    紫
+                                </a>
+                                <a href="#" data-change-to="contrast-green"><i class='icon-adjust text-green'></i>
+                                    绿
+                                </a>
+                                <a href="#" data-change-to="contrast-muted"><i class='icon-adjust text-muted'></i>
+                                    柔和
+                                </a>
+                                <a href="#" data-change-to="contrast-fb"><i class='icon-adjust text-fb'></i>
+                                    深蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-dark"><i class='icon-adjust text-dark'></i>
+                                    黑
+                                </a>
+                                <a href="#" data-change-to="contrast-pink"><i class='icon-adjust text-pink'></i>
+                                    粉
+                                </a>
+                                <a href="#" data-change-to="contrast-grass-green"><i class='icon-adjust text-grass-green'></i>
+                                    草绿
+                                </a>
+                                <a href="#" data-change-to="contrast-sea-blue"><i class='icon-adjust text-sea-blue'></i>
+                                    海蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-banana"><i class='icon-adjust text-banana'></i>
+                                    蕉黄
+                                </a>
+                                <a href="#" data-change-to="contrast-dark-orange"><i class='icon-adjust text-dark-orange'></i>
+                                    暗橙
+                                </a>
+                                <a href="#" data-change-to="contrast-brown"><i class='icon-adjust text-brown'></i>
+                                    棕
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div id='wrapper'>
+    <div id='main-nav-bg'></div>
+    <nav class='' id='main-nav'>
+        <div class='navigation'>
+            <div class='search'>
+
+            </div>
+            <ul class='nav nav-stacked'>
+                <li class=''>
+                    <a href='index.html'>
+                        <i class='icon-cloud'></i>
+                        <span>关键词云</span>
+                    </a>
+                </li>
+                <li>
+                    <a class='dropdown-collapse' href='#'>
+                        <i class='icon-star'></i>
+                        <span>热点新闻</span>
+                        <i class='icon-angle-down angle-down'></i>
+                    </a>
+                    <ul class='nav nav-stacked'>
+                        <li class=''>
+                            <a href="WorldCup.html">
+                                <i class='icon-caret-right'></i>
+                                <span>世界杯</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="一带一路.html">
+                                <i class='icon-caret-right'></i>
+                                <span>一带一路</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="Rain.html">
+                                <i class='icon-caret-right'></i>
+                                <span>暴雨事件</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class='dropdown-collapse in ' href='#'>
+                        <i class='icon-edit'></i>
+                        <span>普通新闻</span>
+                        <i class='icon-angle-down angle-down'></i>
+                    </a>
+                    <ul class='in nav nav-stacked'>
+                        <li class=''>
+                            <a href="one.html">
+                                <i class='icon-caret-right'></i>
+                                <span>碧桂园负债</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="two.html">
+                                <i class='icon-caret-right'></i>
+                                <span>成油价格降低</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="three.html">
+                                <i class='icon-caret-right'></i>
+                                <span>答题卡调包</span>
+                            </a>
+                        </li>
+                        <li class='active'>
+                            <a href="four.html">
+                                <i class='icon-caret-right'></i>
+                                <span>个税降低</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="five.html">
+                                <i class='icon-caret-right'></i>
+                                <span>华为超苹果</span>
+                            </a>
+                        </li>
+
+                        <li class=''>
+                            <a href="seven.html">
+                                <i class='icon-caret-right'></i>
+                                <span>普吉岛沉船</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="eight.html">
+                                <i class='icon-caret-right'></i>
+                                <span>王石董事长</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="nine.html">
+                                <i class='icon-caret-right'></i>
+                                <span>小米IPO</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="ten.html">
+                                <i class='icon-caret-right'></i>
+                                <span>疫苗造假</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="eleven.html">
+                                <i class='icon-caret-right'></i>
+                                <span>阴阳合同</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="twelve.html">
+                                <i class='icon-caret-right'></i>
+                                <span>支付宝上线拼团</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="thirteen.html">
+                                <i class='icon-caret-right'></i>
+                                <span>工商局调查拼多多</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                </li>
+                <li class=''>
+                    <a href='start.html'>
+                        <i class='icon-signin'></i>
+                        <span>退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id='content'>
+        <div class='container-fluid'>
+            <div class='row-fluid' id='content-wrapper'>
+                <div class='span12'>
+                    <div class='row-fluid'>
+                        <div class='span12'>
+                            <div class='page-header'>
+                                <h1 class='pull-left'>
+                                    <i class='icon-bar-chart'></i>
+                                    <span>个税降低</span>
+                                </h1>
+                                <div class='pull-right'>
+                                    <ul class='breadcrumb'>
+                                        <li>
+                                            <a href="index.html"><i class='icon-bar-chart'></i>
+                                            </a>
+                                        </li>
+                                        <li class='separator'>
+                                            <i class='icon-angle-right'></i>
+                                        </li>
+                                        <li>普通新闻</li>
+                                        <li class='separator'>
+                                            <i class='icon-angle-right'></i>
+                                        </li>
+                                        <li class='active'>个税降低</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box box-transparent'>
+                            <div class='row-fluid'>
+                                <div class='span3 box-quick-link blue-background'>
+                                    <a href='http://finance.ifeng.com/a/20180728/16412008_0.shtml
+'>
+                                        <div class='header'>
+                                            <div class='icon-external-link'></div>
+                                        </div>
+                                        <div class='content' id="1">
+
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class='span3 box-quick-link green-background'>
+                                    <a href='http://www.sohu.com/a/238795723_711825
+'>
+                                        <div class='header'>
+                                            <div class='icon-star'></div>
+                                        </div>
+                                        <div class='content' id="2">
+
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class='span3 box-quick-link orange-background'>
+                                    <a href='https://finance.qq.com/a/20180629/021174.htm
+'>
+                                        <div class='header'>
+                                            <div class='icon-magic'></div>
+                                        </div>
+                                        <div class='content' id="3">
+
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class='span3 box-quick-link purple-background'>
+                                    <a href='http://money.163.com/18/0702/10/DLN2PB7200258105.html
+'>
+                                        <div class='header'>
+                                            <div class='icon-eye-open'></div>
+                                        </div>
+                                        <div class='content' id="4">
+                                        </div>
+
+                                    </a>
+                                </div>
+                                <script>
+                                    var a=[];
+                                    a=['时代财经','大猫财经','中国人大网','中国经济周刊（北京）'];
+                                    /* $.ajax({
+                                         type: 'GET',
+                                         url : '<%=path %>/',
+                                         dataType: 'json',
+                                         success:function(data){
+                                             debugger;
+                                             a=data.hhhhhh;//四个平台名称
+                                         },
+                                         error:function(){
+                                             debugger;
+                                         },
+                                         complete:function(){
+                                             //不管数据接口成功或异常，都终于载入提示
+                                             myChart.hideLoading();//停止动画载入提示
+                                         }
+                                     })*/
+                                    var d1 = document.getElementById('1');
+                                    var d2 = document.getElementById('2');
+                                    var d3 = document.getElementById('3');
+                                    var d4 = document.getElementById('4');//获取div的节点
+                                    d1.innerHTML = a[0];//在div节点上显示a的值1
+                                    d2.innerHTML = a[1];//在div节点上显示a的值1
+                                    d3.innerHTML = a[2];//在div节点上显示a的值1
+                                    d4.innerHTML = a[3];//在div节点上显示a的值1
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class='hr-double' />
+                    <div class='row-fluid'>
+                        <div class='span12 box box-nomargin'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    <i class='icon-pushpin'></i>
+                                    内容摘要
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content box-padding'>
+                                <script type="text/javascript">
+                                    var hhh='近期个人所得税法修正案草案（下称个税草案）在中国人大网上公开征求社会意见。其中综合所得的最高边际税率45%是否应该下调成为这次个税草案讨论热点之一。';
+                                    /*$.ajax({
+                                        type: 'GET',
+                                        url : '<%=path %>/',
+                                        dataType: 'json',
+                                        success:function(data){
+                                            debugger;
+                                            hhh=data.hhhhhh;//摘要
+                                        },
+                                        error:function(){
+                                            debugger;
+                                        },
+                                        complete:function(){
+                                            //不管数据接口成功或异常，都终于载入提示
+                                            myChart.hideLoading();//停止动画载入提示
+                                        }
+                                    })*/
+                                    document.write(hhh);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    关注度
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main1" style="width:auto;height:400px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- / jquery -->
+<script src='assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+<!-- / jquery mobile events (for touch and slide) -->
+<script src='assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js' type='text/javascript'></script>
+<!-- / jquery migrate (for compatibility with new jquery) -->
+<script src='assets/javascripts/jquery/jquery-migrate.min.js' type='text/javascript'></script>
+<!-- / jquery ui -->
+<script src='assets/javascripts/jquery_ui/jquery-ui.min.js' type='text/javascript'></script>
+<!-- / bootstrap -->
+<script src='assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/excanvas.js' type='text/javascript'></script>
+<!-- / sparklines -->
+<script src='assets/javascripts/plugins/sparklines/jquery.sparkline.min.js' type='text/javascript'></script>
+<!-- / flot charts -->
+<script src='assets/javascripts/plugins/flot/flot.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.resize.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.pie.js' type='text/javascript'></script>
+<!-- / bootstrap switch -->
+<script src='assets/javascripts/plugins/bootstrap_switch/bootstrapSwitch.min.js' type='text/javascript'></script>
+<!-- / fullcalendar -->
+<script src='assets/javascripts/plugins/fullcalendar/fullcalendar.min.js' type='text/javascript'></script>
+<!-- / datatables -->
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+<!-- / wysihtml5 -->
+<script src='assets/javascripts/plugins/common/wysihtml5.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/common/bootstrap-wysihtml5.js' type='text/javascript'></script>
+<!-- / select2 -->
+<script src='assets/javascripts/plugins/select2/select2.js' type='text/javascript'></script>
+<!-- / color picker -->
+<script src='assets/javascripts/plugins/bootstrap_colorpicker/bootstrap-colorpicker.min.js' type='text/javascript'></script>
+<!-- / mention -->
+<script src='assets/javascripts/plugins/mention/mention.min.js' type='text/javascript'></script>
+<!-- / input mask -->
+<script src='assets/javascripts/plugins/input_mask/bootstrap-inputmask.min.js' type='text/javascript'></script>
+<!-- / fileinput -->
+<script src='assets/javascripts/plugins/fileinput/bootstrap-fileinput.js' type='text/javascript'></script>
+<!-- / modernizr -->
+<script src='assets/javascripts/plugins/modernizr/modernizr.min.js' type='text/javascript'></script>
+<!-- / retina -->
+<script src='assets/javascripts/plugins/retina/retina.js' type='text/javascript'></script>
+<!-- / fileupload -->
+<script src='assets/javascripts/plugins/fileupload/tmpl.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/load-image.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/canvas-to-blob.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.iframe-transport.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-fp.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-ui.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-init.js' type='text/javascript'></script>
+<!-- / timeago -->
+<script src='assets/javascripts/plugins/timeago/jquery.timeago.js' type='text/javascript'></script>
+<!-- / slimscroll -->
+<script src='assets/javascripts/plugins/slimscroll/jquery.slimscroll.min.js' type='text/javascript'></script>
+<!-- / autosize (for textareas) -->
+<script src='assets/javascripts/plugins/autosize/jquery.autosize-min.js' type='text/javascript'></script>
+<!-- / charCount -->
+<script src='assets/javascripts/plugins/charCount/charCount.js' type='text/javascript'></script>
+<!-- / validate -->
+<script src='assets/javascripts/plugins/validate/jquery.validate.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+<!-- / naked password -->
+<script src='assets/javascripts/plugins/naked_password/naked_password-0.2.4.min.js' type='text/javascript'></script>
+<!-- / nestable -->
+<script src='assets/javascripts/plugins/nestable/jquery.nestable.js' type='text/javascript'></script>
+<!-- / tabdrop -->
+<script src='assets/javascripts/plugins/tabdrop/bootstrap-tabdrop.js' type='text/javascript'></script>
+<!-- / jgrowl -->
+<script src='assets/javascripts/plugins/jgrowl/jquery.jgrowl.min.js' type='text/javascript'></script>
+<!-- / bootbox -->
+<script src='assets/javascripts/plugins/bootbox/bootbox.min.js' type='text/javascript'></script>
+<!-- / inplace editing -->
+<script src='assets/javascripts/plugins/xeditable/bootstrap-editable.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/xeditable/wysihtml5.js' type='text/javascript'></script>
+<!-- / ckeditor -->
+<script src='assets/javascripts/plugins/ckeditor/ckeditor.js' type='text/javascript'></script>
+<!-- / filetrees -->
+<script src='assets/javascripts/plugins/dynatree/jquery.dynatree.min.js' type='text/javascript'></script>
+<!-- / datetime picker -->
+<script src='assets/javascripts/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.js' type='text/javascript'></script>
+<!-- / daterange picker -->
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/moment.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js' type='text/javascript'></script>
+<!-- / max length -->
+<script src='assets/javascripts/plugins/bootstrap_maxlength/bootstrap-maxlength.min.js' type='text/javascript'></script>
+<!-- / dropdown hover -->
+<script src='assets/javascripts/plugins/bootstrap_hover_dropdown/twitter-bootstrap-hover-dropdown.min.js' type='text/javascript'></script>
+<!-- / slider nav (address book) -->
+<script src='assets/javascripts/plugins/slider_nav/slidernav-min.js' type='text/javascript'></script>
+<!-- / fuelux -->
+<script src='assets/javascripts/plugins/fuelux/wizard.js' type='text/javascript'></script>
+<!-- / flatty theme -->
+<script src='assets/javascripts/nav.js' type='text/javascript'></script>
+<script src='assets/javascripts/tables.js' type='text/javascript'></script>
+<script src='assets/javascripts/theme.js' type='text/javascript'></script>
+<!-- / demo -->
+<script src='assets/javascripts/demo/jquery.mockjax.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/inplace_editing.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/charts.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/demo.js' type='text/javascript'></script>
+
+
+<script type="text/javascript" src="e-chart/echarts.min.js"></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>-->
+<script type="text/javascript" src="e-chart/china.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="e-chart/lib/esl.js"></script>
+<script src="e-chart/lib/config.js"></script>
+<script src="e-chart/lib/jquery.min.js"></script>
+<script src="e-chart/lib/facePrint.js"></script>
+<script src="e-chart/lib/testHelper.js"></script>
+<link rel="stylesheet" href="e-chart/lib/reset.css">
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.getElementById('main1'));
+    option1 = {
+        title: {
+            text: '各网站评论数',
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            },
+            /* formatter: function (params) {
+                 var tar = params[1];
+                 return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+             }*/
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type : 'category',
+            splitLine: {show:false},
+            data : []
+        },
+        yAxis: {
+            type : 'value'
+        },
+        series: [
+            {
+                name: '辅助',
+                type: 'bar',
+                stack:  '总量',
+                itemStyle: {
+                    normal: {
+                        barBorderColor: 'rgba(0,0,0,0)',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    emphasis: {
+                        barBorderColor: 'rgba(0,0,0,0)',
+                        color: 'rgba(0,0,0,0)'
+                    }
+                },
+                data: [0,0,0,0]
+            },
+            {
+                name: '评论数',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'inside'
+                    }
+                },
+                data:[]
+            }
+        ]
+    };
+    option1.xAxis['data']=['时代财经','大猫财经','中国人大网','中国经济周刊（北京）','合计'];//平台名称
+    option1.series[0]['data']=[0,0,1,1833,0];//辅助
+    option1.series[1]['data']=[0,1,1832,683,2516];//评论数
+    myChart1.setOption(option1);
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option1.xAxis[0]['data']=data.xAxisArr;//平台名称
+            option1.series[1]['data']=data.restArr;//评论数
+            myChart1.setOption(option1);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+
+    myChart1.setOption(option1,true);
+    window.onresize = function () {
+        myChart1.resize();
+    };
+
+</script>
+
+</body>
+</html>

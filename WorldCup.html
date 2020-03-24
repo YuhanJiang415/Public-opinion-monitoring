@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>舆情监测平台</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+    <!--[if lt IE 9]>
+    <script src='assets/javascripts/html5shiv.js' type='text/javascript'></script>
+    <script src="e-chart/echarts.js"></script>
+    <script src='e-chart/echarts-wordcloud.js'></script>
+    <![endif]-->
+    <link href='assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery ui -->
+    <link href='assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / switch buttons -->
+    <link href='assets/stylesheets/plugins/bootstrap_switch/bootstrap-switch.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / xeditable -->
+    <link href='assets/stylesheets/plugins/xeditable/bootstrap-editable.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / wysihtml5 (wysywig) -->
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery file upload -->
+    <link href='assets/stylesheets/plugins/jquery_fileupload/jquery.fileupload-ui.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / full calendar -->
+    <link href='assets/stylesheets/plugins/fullcalendar/fullcalendar.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / select2 -->
+    <link href='assets/stylesheets/plugins/select2/select2.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / mention -->
+    <link href='assets/stylesheets/plugins/mention/mention.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / tabdrop (responsive tabs) -->
+    <link href='assets/stylesheets/plugins/tabdrop/tabdrop.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jgrowl notifications -->
+    <link href='assets/stylesheets/plugins/jgrowl/jquery.jgrowl.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datatables -->
+    <link href='assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / dynatrees (file trees) -->
+    <link href='assets/stylesheets/plugins/dynatree/ui.dynatree.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / color picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_colorpicker/bootstrap-colorpicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datetime picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / daterange picker) -->
+    <link href='assets/stylesheets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flags (country flags) -->
+    <link href='assets/stylesheets/plugins/flags/flags.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / slider nav (address book) -->
+    <link href='assets/stylesheets/plugins/slider_nav/slidernav.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / fuelux (wizard) -->
+    <link href='assets/stylesheets/plugins/fuelux/wizard.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flatty theme -->
+    <link href='assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <!-- / demo -->
+    <link href='assets/stylesheets/demo.css' media='all' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class='contrast-red '>
+<header>
+    <div class='navbar'>
+        <div class='navbar-inner'>
+            <div class='container-fluid'>
+                <a class='brand' href='index.html'>
+                    <i class='icon-heart-empty'></i>
+                    <span class='hidden-phone'>菜单</span>
+                </a>
+                <a class='toggle-nav btn pull-left' href='#'>
+                    <i class='icon-reorder'></i>
+                </a>
+                <ul class='nav pull-right'>
+                    <li class='dropdown light only-icon'>
+                        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                            <i class='icon-adjust'></i>
+                        </a>
+                        <ul class='dropdown-menu color-settings'>
+                            <li class='color-settings-contrast-color'>
+                                <div class='color-title'>设置颜色</div>
+                                <a href="#" data-change-to="contrast-red"><i class='icon-adjust text-red'></i>
+                                    红
+                                    <small>(默认)</small>
+                                </a>
+                                <a href="#" data-change-to="contrast-blue"><i class='icon-adjust text-blue'></i>
+                                    蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-orange"><i class='icon-adjust text-orange'></i>
+                                    橙
+                                </a>
+                                <a href="#" data-change-to="contrast-purple"><i class='icon-adjust text-purple'></i>
+                                    紫
+                                </a>
+                                <a href="#" data-change-to="contrast-green"><i class='icon-adjust text-green'></i>
+                                    绿
+                                </a>
+                                <a href="#" data-change-to="contrast-muted"><i class='icon-adjust text-muted'></i>
+                                    柔和
+                                </a>
+                                <a href="#" data-change-to="contrast-fb"><i class='icon-adjust text-fb'></i>
+                                    深蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-dark"><i class='icon-adjust text-dark'></i>
+                                    黑
+                                </a>
+                                <a href="#" data-change-to="contrast-pink"><i class='icon-adjust text-pink'></i>
+                                    粉
+                                </a>
+                                <a href="#" data-change-to="contrast-grass-green"><i class='icon-adjust text-grass-green'></i>
+                                    草绿
+                                </a>
+                                <a href="#" data-change-to="contrast-sea-blue"><i class='icon-adjust text-sea-blue'></i>
+                                    海蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-banana"><i class='icon-adjust text-banana'></i>
+                                    蕉黄
+                                </a>
+                                <a href="#" data-change-to="contrast-dark-orange"><i class='icon-adjust text-dark-orange'></i>
+                                    暗橙
+                                </a>
+                                <a href="#" data-change-to="contrast-brown"><i class='icon-adjust text-brown'></i>
+                                    棕
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div id='wrapper'>
+    <div id='main-nav-bg'></div>
+    <nav class='' id='main-nav'>
+        <div class='navigation'>
+            <div class='search'>
+
+            </div>
+            <ul class='nav nav-stacked'>
+                <li class=''>
+                    <a href='index.html'>
+                        <i class='icon-cloud'></i>
+                        <span>关键词云</span>
+                    </a>
+                </li>
+                <li>
+                    <a class='dropdown-collapse in' href='#'>
+                        <i class='icon-star'></i>
+                        <span>热点新闻</span>
+                        <i class='icon-angle-down angle-down'></i>
+                    </a>
+                    <ul class='in nav nav-stacked'>
+                        <li class='active'>
+                            <a href="WorldCup.html">
+                                <i class='icon-caret-right'></i>
+                                <span>世界杯</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="一带一路.html">
+                                <i class='icon-caret-right'></i>
+                                <span>一带一路</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="Rain.html">
+                                <i class='icon-caret-right'></i>
+                                <span>暴雨事件</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class='dropdown-collapse' href='#'>
+                        <i class='icon-edit'></i>
+                        <span>普通新闻</span>
+                        <i class='icon-angle-down angle-down'></i>
+                    </a>
+                    <ul class='nav nav-stacked'>
+                        <li class=''>
+                            <a href="one.html">
+                                <i class='icon-caret-right'></i>
+                                <span>碧桂园负债</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="two.html">
+                                <i class='icon-caret-right'></i>
+                                <span>成油价格降低</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="three.html">
+                                <i class='icon-caret-right'></i>
+                                <span>答题卡调包</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="four.html">
+                                <i class='icon-caret-right'></i>
+                                <span>个税降低</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="five.html">
+                                <i class='icon-caret-right'></i>
+                                <span>华为超苹果</span>
+                            </a>
+                        </li>
+
+                        <li class=''>
+                            <a href="seven.html">
+                                <i class='icon-caret-right'></i>
+                                <span>普吉岛沉船</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="eight.html">
+                                <i class='icon-caret-right'></i>
+                                <span>王石董事长</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="nine.html">
+                                <i class='icon-caret-right'></i>
+                                <span>小米IPO</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="ten.html">
+                                <i class='icon-caret-right'></i>
+                                <span>疫苗造假</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="eleven.html">
+                                <i class='icon-caret-right'></i>
+                                <span>阴阳合同</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="twelve.html">
+                                <i class='icon-caret-right'></i>
+                                <span>支付宝上线拼团</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="thirteen.html">
+                                <i class='icon-caret-right'></i>
+                                <span>工商局调查拼多多</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=''>
+                    <a href='start.html'>
+                        <i class='icon-signin'></i>
+                        <span>退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id='content'>
+        <div class='container-fluid'>
+            <div class='row-fluid' id='content-wrapper'>
+                <div class='span12'>
+                    <div class='row-fluid'>
+                        <div class='span12'>
+                            <div class='page-header'>
+                                <h1 class='pull-left'>
+                                    <i class='icon-bar-chart'></i>
+                                    <span>世界杯</span>
+                                </h1>
+                                <div class='pull-right'>
+                                    <ul class='breadcrumb'>
+                                        <li>
+                                            <a href="index.html"><i class='icon-bar-chart'></i>
+                                            </a>
+                                        </li>
+                                        <li class='separator'>
+                                            <i class='icon-angle-right'></i>
+                                        </li>
+                                        <li>热点新闻</li>
+                                        <li class='separator'>
+                                            <i class='icon-angle-right'></i>
+                                        </li>
+                                        <li class='active'>世界杯</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    关注度
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div class='actions'>
+
+                                </div>
+                                <div class='box-content'>
+                                    <div id="main11" style="width:auto;height:400px;" align="center" ></div>
+                                </div>
+                                <hr class='hr-double' />
+                                <div class='box-content'>
+                                    <div id="main12" style="width:auto;height:400px;" align="center" ></div>
+                                </div>
+                                <hr class='hr-double' />
+                                <div class='box-content'>
+                                    <div id="main13" style="width:auto;height:400px;" align="center" ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    各场比赛播放量
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main3" style="width:auto;height:600px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    各国家俱乐部前100数量
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main4" style="width:auto;height:400px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    各国家前100球星数量
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main5" style="width:auto;height:400px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    各国家身价前100球星数量
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main6" style="width:auto;height:400px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- / jquery -->
+<script src='assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+<!-- / jquery mobile events (for touch and slide) -->
+<script src='assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js' type='text/javascript'></script>
+<!-- / jquery migrate (for compatibility with new jquery) -->
+<script src='assets/javascripts/jquery/jquery-migrate.min.js' type='text/javascript'></script>
+<!-- / jquery ui -->
+<script src='assets/javascripts/jquery_ui/jquery-ui.min.js' type='text/javascript'></script>
+<!-- / bootstrap -->
+<script src='assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/excanvas.js' type='text/javascript'></script>
+<!-- / sparklines -->
+<script src='assets/javascripts/plugins/sparklines/jquery.sparkline.min.js' type='text/javascript'></script>
+<!-- / flot charts -->
+<script src='assets/javascripts/plugins/flot/flot.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.resize.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.pie.js' type='text/javascript'></script>
+<!-- / bootstrap switch -->
+<script src='assets/javascripts/plugins/bootstrap_switch/bootstrapSwitch.min.js' type='text/javascript'></script>
+<!-- / fullcalendar -->
+<script src='assets/javascripts/plugins/fullcalendar/fullcalendar.min.js' type='text/javascript'></script>
+<!-- / datatables -->
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+<!-- / wysihtml5 -->
+<script src='assets/javascripts/plugins/common/wysihtml5.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/common/bootstrap-wysihtml5.js' type='text/javascript'></script>
+<!-- / select2 -->
+<script src='assets/javascripts/plugins/select2/select2.js' type='text/javascript'></script>
+<!-- / color picker -->
+<script src='assets/javascripts/plugins/bootstrap_colorpicker/bootstrap-colorpicker.min.js' type='text/javascript'></script>
+<!-- / mention -->
+<script src='assets/javascripts/plugins/mention/mention.min.js' type='text/javascript'></script>
+<!-- / input mask -->
+<script src='assets/javascripts/plugins/input_mask/bootstrap-inputmask.min.js' type='text/javascript'></script>
+<!-- / fileinput -->
+<script src='assets/javascripts/plugins/fileinput/bootstrap-fileinput.js' type='text/javascript'></script>
+<!-- / modernizr -->
+<script src='assets/javascripts/plugins/modernizr/modernizr.min.js' type='text/javascript'></script>
+<!-- / retina -->
+<script src='assets/javascripts/plugins/retina/retina.js' type='text/javascript'></script>
+<!-- / fileupload -->
+<script src='assets/javascripts/plugins/fileupload/tmpl.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/load-image.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/canvas-to-blob.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.iframe-transport.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-fp.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-ui.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-init.js' type='text/javascript'></script>
+<!-- / timeago -->
+<script src='assets/javascripts/plugins/timeago/jquery.timeago.js' type='text/javascript'></script>
+<!-- / slimscroll -->
+<script src='assets/javascripts/plugins/slimscroll/jquery.slimscroll.min.js' type='text/javascript'></script>
+<!-- / autosize (for textareas) -->
+<script src='assets/javascripts/plugins/autosize/jquery.autosize-min.js' type='text/javascript'></script>
+<!-- / charCount -->
+<script src='assets/javascripts/plugins/charCount/charCount.js' type='text/javascript'></script>
+<!-- / validate -->
+<script src='assets/javascripts/plugins/validate/jquery.validate.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+<!-- / naked password -->
+<script src='assets/javascripts/plugins/naked_password/naked_password-0.2.4.min.js' type='text/javascript'></script>
+<!-- / nestable -->
+<script src='assets/javascripts/plugins/nestable/jquery.nestable.js' type='text/javascript'></script>
+<!-- / tabdrop -->
+<script src='assets/javascripts/plugins/tabdrop/bootstrap-tabdrop.js' type='text/javascript'></script>
+<!-- / jgrowl -->
+<script src='assets/javascripts/plugins/jgrowl/jquery.jgrowl.min.js' type='text/javascript'></script>
+<!-- / bootbox -->
+<script src='assets/javascripts/plugins/bootbox/bootbox.min.js' type='text/javascript'></script>
+<!-- / inplace editing -->
+<script src='assets/javascripts/plugins/xeditable/bootstrap-editable.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/xeditable/wysihtml5.js' type='text/javascript'></script>
+<!-- / ckeditor -->
+<script src='assets/javascripts/plugins/ckeditor/ckeditor.js' type='text/javascript'></script>
+<!-- / filetrees -->
+<script src='assets/javascripts/plugins/dynatree/jquery.dynatree.min.js' type='text/javascript'></script>
+<!-- / datetime picker -->
+<script src='assets/javascripts/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.js' type='text/javascript'></script>
+<!-- / daterange picker -->
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/moment.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js' type='text/javascript'></script>
+<!-- / max length -->
+<script src='assets/javascripts/plugins/bootstrap_maxlength/bootstrap-maxlength.min.js' type='text/javascript'></script>
+<!-- / dropdown hover -->
+<script src='assets/javascripts/plugins/bootstrap_hover_dropdown/twitter-bootstrap-hover-dropdown.min.js' type='text/javascript'></script>
+<!-- / slider nav (address book) -->
+<script src='assets/javascripts/plugins/slider_nav/slidernav-min.js' type='text/javascript'></script>
+<!-- / fuelux -->
+<script src='assets/javascripts/plugins/fuelux/wizard.js' type='text/javascript'></script>
+<!-- / flatty theme -->
+<script src='assets/javascripts/nav.js' type='text/javascript'></script>
+<script src='assets/javascripts/tables.js' type='text/javascript'></script>
+<script src='assets/javascripts/theme.js' type='text/javascript'></script>
+<!-- / demo -->
+<script src='assets/javascripts/demo/jquery.mockjax.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/inplace_editing.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/charts.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/demo.js' type='text/javascript'></script>
+
+
+
+<script type="text/javascript" src="e-chart/echarts.min.js"></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>-->
+<script type="text/javascript" src="e-chart/china.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="e-chart/lib/esl.js"></script>
+<script src="e-chart/lib/config.js"></script>
+<script src="e-chart/lib/jquery.min.js"></script>
+<script src="e-chart/lib/facePrint.js"></script>
+<script src="e-chart/lib/testHelper.js"></script>
+<link rel="stylesheet" href="e-chart/lib/reset.css">
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart11 = echarts.init(document.getElementById('main11'));
+    option11 = null;
+    option11 = {
+        title : {
+            text: '搜索指数',
+
+            x: 'center',
+            align: 'right'
+        },
+        grid: {
+            bottom: 80
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                animation: false,
+                label: {
+                    backgroundColor: '#505765'
+                }
+            }
+        },
+        legend: {
+            data:['搜索指数'],
+            x: 'left'
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 65,
+                end: 85
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 65,
+                end: 85
+            }
+        ],
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                data : ['2018/6/1',
+                    '2018/6/2',
+                    '2018/6/3',
+                    '2018/6/4',
+                    '2018/6/5',
+                    '2018/6/6',
+                    '2018/6/7',
+                    '2018/6/8',
+                    '2018/6/9',
+                    '2018/6/10',
+                    '2018/6/11',
+                    '2018/6/12',
+                    '2018/6/13',
+                    '2018/6/14',
+                    '2018/6/15',
+                    '2018/6/16',
+                    '2018/6/17',
+                    '2018/6/18',
+                    '2018/6/19',
+                    '2018/6/20',
+                    '2018/6/21',
+                    '2018/6/22',
+                    '2018/6/23',
+                    '2018/6/24',
+                    '2018/6/25',
+                    '2018/6/26',
+                    '2018/6/27',
+                    '2018/6/28',
+                    '2018/6/29',
+                    '2018/6/30',
+                    '2018/7/1',
+                    '2018/7/2',
+                    '2018/7/3',
+                    '2018/7/4',
+                    '2018/7/5',
+                    '2018/7/6',
+                    '2018/7/7',
+                    '2018/7/8',
+                    '2018/7/9',
+                    '2018/7/10',
+                    '2018/7/11',
+                    '2018/7/12',
+                    '2018/7/13',
+                    '2018/7/14',
+                    '2018/7/15',
+                    '2018/7/16',
+                    '2018/7/17',
+                    '2018/7/18',
+                    '2018/7/19',
+                    '2018/7/20',
+                    '2018/7/21',
+                    '2018/7/22',
+                    '2018/7/23',
+                    '2018/7/24',
+                    '2018/7/25',
+                    '2018/7/26',
+                    '2018/7/27',
+                    '2018/7/28',
+                    '2018/7/29',
+                    '2018/7/30',
+                    '2018/7/31',
+                    '2018/8/1',
+                    '2018/8/2',
+                    '2018/8/3',
+                    '2018/8/4',
+                    '2018/8/5',
+                    '2018/8/6',
+                    '2018/8/7',
+                    '2018/8/8',
+                    '2018/8/9',
+                    '2018/8/10',
+                    '2018/8/11'
+                ].map(function (str) {
+                    return str.replace(' ', '\n')
+                })
+            }
+        ],
+        yAxis: [
+            {
+                name: '搜索指数',
+                type: 'value',
+                max: 6200000
+            }
+        ],
+        series: [
+            {
+                name:'搜索指数',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[82269,
+                    94262,
+                    105355,
+                    146663,
+                    145639,
+                    151205,
+                    161454,
+                    179512,
+                    171996,
+                    195538,
+                    343716,
+                    403330,
+                    782589,
+                    3337504,
+                    4518312,
+                    6050640,
+                    4584282,
+                    5457536,
+                    4820408,
+                    4661208,
+                    4167243,
+                    5217044,
+                    4571047,
+                    4851187,
+                    4435424,
+                    4217532,
+                    4874423,
+                    4736572,
+                    3023934,
+                    3181926,
+                    5024906,
+                    5187772,
+                    4079412,
+                    3248178,
+                    1552662,
+                    2444069,
+                    4415919,
+                    3354499,
+                    1238253,
+                    1557265,
+                    2835179,
+                    2997562,
+                    1276818,
+                    2257668,
+                    3241580,
+                    2450445,
+                    172601,
+                    98391,
+                    74784,
+                    61240,
+                    50835,
+                    44833,
+                    42960,
+                    37702,
+                    35894,
+                    33679,
+                    30814,
+                    27081,
+                    23648,
+                    24049,
+                    20128,
+                    15254,
+                    14587,
+                    12419,
+                    11174,
+                    11611,
+                    10569,
+                    10451,
+                    9749,
+                    9669,
+                    9483,
+                    9541
+                ]
+            }
+        ]
+    };
+
+
+    myChart11.setOption(option11);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart12 = echarts.init(document.getElementById('main12'));
+    option12 = null;
+    option12 = {
+        title : {
+            text: 'PC趋势',
+
+            x: 'center',
+            align: 'right'
+        },
+        grid: {
+            bottom: 80
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                animation: false,
+                label: {
+                    backgroundColor: '#505765'
+                }
+            }
+        },
+        legend: {
+            data:['PC趋势'],
+            x: 'left'
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 65,
+                end: 85
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 65,
+                end: 85
+            }
+        ],
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                data : ['2018/6/1',
+                    '2018/6/2',
+                    '2018/6/3',
+                    '2018/6/4',
+                    '2018/6/5',
+                    '2018/6/6',
+                    '2018/6/7',
+                    '2018/6/8',
+                    '2018/6/9',
+                    '2018/6/10',
+                    '2018/6/11',
+                    '2018/6/12',
+                    '2018/6/13',
+                    '2018/6/14',
+                    '2018/6/15',
+                    '2018/6/16',
+                    '2018/6/17',
+                    '2018/6/18',
+                    '2018/6/19',
+                    '2018/6/20',
+                    '2018/6/21',
+                    '2018/6/22',
+                    '2018/6/23',
+                    '2018/6/24',
+                    '2018/6/25',
+                    '2018/6/26',
+                    '2018/6/27',
+                    '2018/6/28',
+                    '2018/6/29',
+                    '2018/6/30',
+                    '2018/7/1',
+                    '2018/7/2',
+                    '2018/7/3',
+                    '2018/7/4',
+                    '2018/7/5',
+                    '2018/7/6',
+                    '2018/7/7',
+                    '2018/7/8',
+                    '2018/7/9',
+                    '2018/7/10',
+                    '2018/7/11',
+                    '2018/7/12',
+                    '2018/7/13',
+                    '2018/7/14',
+                    '2018/7/15',
+                    '2018/7/16',
+                    '2018/7/17',
+                    '2018/7/18',
+                    '2018/7/19',
+                    '2018/7/20',
+                    '2018/7/21',
+                    '2018/7/22',
+                    '2018/7/23',
+                    '2018/7/24',
+                    '2018/7/25',
+                    '2018/7/26',
+                    '2018/7/27',
+                    '2018/7/28',
+                    '2018/7/29',
+                    '2018/7/30',
+                    '2018/7/31',
+                    '2018/8/1',
+                    '2018/8/2',
+                    '2018/8/3',
+                    '2018/8/4',
+                    '2018/8/5',
+                    '2018/8/6',
+                    '2018/8/7',
+                    '2018/8/8',
+                    '2018/8/9',
+                    '2018/8/10',
+                    '2018/8/11'
+                ].map(function (str) {
+                    return str.replace(' ', '\n')
+                })
+            }
+        ],
+        yAxis: [
+            {
+                name: 'PC趋势',
+                type: 'value',
+                max:1700000
+            }
+        ],
+        series: [
+            {
+                name:'PC趋势',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[25130,
+                    20248,
+                    21628,
+                    45960,
+                    44418,
+                    49435,
+                    51797,
+                    58212,
+                    36823,
+                    41017,
+                    102238,
+                    107592,
+                    205372,
+                    1059929,
+                    1357216,
+                    1601510,
+                    1098280,
+                    1181047,
+                    1243548,
+                    1112267,
+                    926159,
+                    1124109,
+                    821798,
+                    841841,
+                    908917,
+                    824617,
+                    945240,
+                    905569,
+                    546697,
+                    667673,
+                    736714,
+                    879971,
+                    679340,
+                    499234,
+                    290815,
+                    499888,
+                    609305,
+                    358279,
+                    240202,
+                    286896,
+                    397425,
+                    410354,
+                    216027,
+                    373993,
+                    603258,
+                    316483,
+                    35418,
+                    22974,
+                    18604,
+                    15365,
+                    11709,
+                    10636,
+                    14044,
+                    12780,
+                    12617,
+                    11960,
+                    10503,
+                    7013,
+                    3926,
+                    5084,
+                    4743,
+                    4675,
+                    3979,
+                    2837,
+                    2202,
+                    2077,
+                    1823,
+                    1503,
+                    1332,
+                    1125,
+                    1336,
+                    1250
+                ]
+            }
+        ]
+    };
+
+
+    myChart12.setOption(option12);
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart13 = echarts.init(document.getElementById('main13'));
+    option13 = null;
+    option13 = {
+        title : {
+            text: '移动趋势',
+
+            x: 'center',
+            align: 'right'
+        },
+        grid: {
+            bottom: 80
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                animation: false,
+                label: {
+                    backgroundColor: '#505765'
+                }
+            }
+        },
+        legend: {
+            data:['移动趋势'],
+            x: 'left'
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 65,
+                end: 85
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 65,
+                end: 85
+            }
+        ],
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                data : ['2018/6/1',
+                    '2018/6/2',
+                    '2018/6/3',
+                    '2018/6/4',
+                    '2018/6/5',
+                    '2018/6/6',
+                    '2018/6/7',
+                    '2018/6/8',
+                    '2018/6/9',
+                    '2018/6/10',
+                    '2018/6/11',
+                    '2018/6/12',
+                    '2018/6/13',
+                    '2018/6/14',
+                    '2018/6/15',
+                    '2018/6/16',
+                    '2018/6/17',
+                    '2018/6/18',
+                    '2018/6/19',
+                    '2018/6/20',
+                    '2018/6/21',
+                    '2018/6/22',
+                    '2018/6/23',
+                    '2018/6/24',
+                    '2018/6/25',
+                    '2018/6/26',
+                    '2018/6/27',
+                    '2018/6/28',
+                    '2018/6/29',
+                    '2018/6/30',
+                    '2018/7/1',
+                    '2018/7/2',
+                    '2018/7/3',
+                    '2018/7/4',
+                    '2018/7/5',
+                    '2018/7/6',
+                    '2018/7/7',
+                    '2018/7/8',
+                    '2018/7/9',
+                    '2018/7/10',
+                    '2018/7/11',
+                    '2018/7/12',
+                    '2018/7/13',
+                    '2018/7/14',
+                    '2018/7/15',
+                    '2018/7/16',
+                    '2018/7/17',
+                    '2018/7/18',
+                    '2018/7/19',
+                    '2018/7/20',
+                    '2018/7/21',
+                    '2018/7/22',
+                    '2018/7/23',
+                    '2018/7/24',
+                    '2018/7/25',
+                    '2018/7/26',
+                    '2018/7/27',
+                    '2018/7/28',
+                    '2018/7/29',
+                    '2018/7/30',
+                    '2018/7/31',
+                    '2018/8/1',
+                    '2018/8/2',
+                    '2018/8/3',
+                    '2018/8/4',
+                    '2018/8/5',
+                    '2018/8/6',
+                    '2018/8/7',
+                    '2018/8/8',
+                    '2018/8/9',
+                    '2018/8/10',
+                    '2018/8/11'
+                ].map(function (str) {
+                    return str.replace(' ', '\n')
+                })
+            }
+        ],
+        yAxis: [
+            {
+                name: '移动趋势',
+                type: 'value',
+                max: 4500000
+            }
+        ],
+        series: [
+            {
+                name:'移动趋势',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[57139,
+                    74014,
+                    83727,
+                    100703,
+                    101221,
+                    101770,
+                    109657,
+                    121300,
+                    135173,
+                    154521,
+                    241478,
+                    295738,
+                    577217,
+                    2277575,
+                    3161096,
+                    4449130,
+                    3486002,
+                    4276489,
+                    3576860,
+                    3548941,
+                    3241084,
+                    4092935,
+                    3749249,
+                    4009346,
+                    3526507,
+                    3392915,
+                    3929183,
+                    3831003,
+                    2477237,
+                    2514253,
+                    4288192,
+                    4307801,
+                    3400072,
+                    2748944,
+                    1261847,
+                    1944181,
+                    3806614,
+                    2996220,
+                    998051,
+                    1270369,
+                    2437754,
+                    2587208,
+                    1060791,
+                    1883675,
+                    2638322,
+                    2133962,
+                    137183,
+                    75417,
+                    56180,
+                    45875,
+                    39126,
+                    34197,
+                    28916,
+                    24922,
+                    23277,
+                    21719,
+                    20311,
+                    20068,
+                    19722,
+                    18965,
+                    15385,
+                    10579,
+                    10608,
+                    9582,
+                    8972,
+                    9534,
+                    8746,
+                    8948,
+                    8417,
+                    8544,
+                    8147,
+                    8291
+                ]
+            }
+        ]
+    };
+
+    myChart13.setOption(option13);
+</script>
+
+
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart3 = echarts.init(document.getElementById('main3'));
+    option3= null;
+    option3 = {
+        title : {
+            text: '各比赛播放量',
+
+            x: 'center',
+            align: 'right'
+        },
+        grid: {
+            bottom: 80
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                animation: false,
+                label: {
+                    backgroundColor: '#505765'
+                }
+            }
+        },
+        legend: {
+            data:['各比赛播放量'],
+            x: 'left'
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 65,
+                end: 85
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 65,
+                end: 85
+            }
+        ],
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                data : ['央视2018世界杯',
+                    '俄罗斯5-0沙特 切里舍夫双响东道主创纪录',
+                    '俄罗斯世界杯揭幕全看点',
+                    '摩洛哥0-1伊朗 布哈杜兹乌龙绝杀',
+                    '埃及0-1乌拉圭 铁卫89分钟绝杀萨拉赫缺阵',
+                    '秘鲁0-1丹麦 鲍尔森建功',
+                    '葡萄牙3-3西班牙 C罗戴帽献绝世任意球',
+                    '阿根廷1-1冰岛 阿圭罗破门梅西失点',
+                    '法国2-1澳大利亚 姆巴佩助胜',
+                    '克罗地亚2-0尼日利亚 莫德里奇点球建功',
+                    '哥斯达黎加0-1塞尔维亚 科拉罗夫世界波',
+                    '德国0-1墨西哥 洛萨诺制胜球',
+                    '巴西1-1瑞士 库鸟世界波',
+                    '瑞典1-0韩国 格兰奎斯特点射',
+                    '比利时3-0巴拿马 卢卡库2球默滕斯世界波',
+                    '哥伦比亚1-2日本 桑切斯获本届杯赛首红',
+                    '突尼斯1-2英格兰 凯恩梅开二度',
+                   '波兰1-2塞内加尔 莱万哑火非洲球队取首胜' ,
+                   '乌拉圭1-0沙特 苏神制胜一击',
+                    '葡萄牙1-0摩洛哥 C罗制胜头槌',
+                   '俄罗斯3-1埃及 萨拉赫破门难救主' ,
+                   '丹麦1-1澳大利亚 埃里克森闪击',
+                    '伊朗0-1西班牙 科斯塔幸运进球',
+                  '阿根廷0-3克罗地亚 魔笛世界波',
+                   '法国1-0秘鲁 妖星创纪录',
+                    '尼日利亚2-0冰岛 穆萨2球冰岛大狙踢飞点球',
+                    '巴西2-0哥斯达黎加 库蒂尼奥内马尔补时破门',
+                    '塞尔维亚1-2瑞士 扎卡世界波沙奇里绝杀',
+                    '韩国1-2墨西哥 孙兴慜世界波小豌豆破门',
+                    '波兰0-3哥伦比亚 J罗两送助攻',
+                    '德国2-1瑞典 罗伊斯破门克罗斯世界波',
+                    '日本2-2塞内加尔 本田圭佑推射空门救主',
+                    '英格兰6-1巴拿马 凯恩戴帽超C罗',
+                    '沙特2-1埃及 萨拉赫建功难救主',
+                    '乌拉圭3-0俄罗斯 苏神卡瓦尼破门',
+                    '西班牙2-2摩洛哥 伊斯科破门阿斯帕斯绝平',
+                    '伊朗1-1葡萄牙 C罗失点夸雷斯马建功',
+                    '丹麦0-0法国 吉鲁失良机',
+                    '澳大利亚0-2秘鲁 格雷罗传射居首功',
+                    '冰岛1-2克罗地亚 佩里西奇绝杀',
+                    '韩国2-0德国 孙兴慜建功',
+                    '尼日利亚1-2阿根廷 梅西建功罗霍绝杀',
+                    '墨西哥0-3瑞典 格兰奎斯特点射',
+                    '日本0-1波兰 贝德纳迪克制胜球',
+                    '塞内加尔0-1哥伦比亚 巴萨铁卫破门',
+                    '瑞士2-2哥斯达黎加 哲马伊利建功',
+                    '塞尔维亚0-2巴西 保利尼奥席尔瓦建功',
+                    '巴拿马1-2突尼斯 本尤素夫扳平哈兹里制胜',
+                    '法国4-3阿根廷 姆巴佩造三球',
+                    '西班牙4-5俄罗斯 东道主点球大战制胜',
+                    '巴西2-0墨西哥 内少传射定胜局',
+                    '乌拉圭2-1葡萄牙 卡瓦尼独中两元',
+                    '克罗地亚4-3丹麦 点球大战两门神合造5神扑',
+                    '瑞典1-0瑞士 福斯贝里制胜',
+                    '哥伦比亚4-5英格兰 三狮军团将战瑞典',
+                    '乌拉圭0-2法国 瓦拉内格列兹曼建功',
+                    '巴西1-2比利时 费鸟乌龙丁丁世界波',
+                    '瑞典0-2英格兰 马奎尔阿里各建一功',
+                    '俄罗斯5-6克罗地亚 后者20年后再进世界杯4强',
+                    '法国1-0比利时 铁卫头球制胜',
+                    '克罗地亚2-1英格兰 曼朱基奇加时一击制胜',
+                    '比利时2-0英格兰阿扎尔锁胜局',
+                    '法国4-2克罗地亚 时隔20年再夺世界杯冠军',
+                    '绿荫舞者变鼓手 小罗引全场欢呼',
+                    '2018世界杯颁奖仪式'
+
+                ].map(function (str) {
+                    return str.replace(' ', '\n')
+                })
+            }
+        ],
+        yAxis: [
+            {
+                name: '各比赛播放量',
+                type: 'value',
+                max:5400
+            }
+        ],
+        series: [
+            {
+                name:'各比赛播放量',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[1427.0,
+                    2364.5,
+                    1404.3,
+                    494.5,
+                    766.8,
+                    210.7,
+                    3698.1,
+                    1093.6,
+                    350.1,
+                    358.9,
+                    384.6,
+                    5313.4,
+                    1056.3,
+                    671.0,
+                    475.7,
+                    712.6,
+                    691.2,
+                    245.9,
+                    143.4,
+                    930.8,
+                    545.6,
+                    250.,
+                    334.0,
+                    1619.3,
+                    291.6,
+                    205.6,
+                    781.7,
+                    330.0,
+                    108.6,
+                    343.7,
+                    269.1,
+                    442.4,
+                    698.2,
+                    172.6,
+                    270.9,
+                    371.0,
+                    605.5,
+                    165.5,
+                    172.2,
+                    246.9,
+                    1695.3,
+                    2123.9,
+                    192.1,
+                    541.1,
+                    194.9,
+                    179.3,
+                    782.3,
+                    164.4,
+                    1786.4,
+                    1129.8,
+                    840.6,
+                    1938.6,
+                    1029.7,
+                    356.1,
+                    1246.0,
+                    672.6,
+                    1252.5,
+                    759.9,
+                    1021.8,
+                    1730.3,
+                    2292.1,
+                    1186.8,
+                    1611.6,
+                    223.5,
+                    238.2,
+
+                ]
+            }
+        ]
+    };
+
+
+    myChart3.setOption(option3);
+</script>
+
+
+<script type="text/javascript">
+    var myChart4 = echarts.init(document.getElementById('main4'));
+    option4 = {
+        title : {
+            text: '各国家俱乐部前100数量',
+            subtext: ' ',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:[]
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel']
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'数量',
+                type:'pie',
+                radius : [20, 110],
+                center : ['50%', '50%'],
+                roseType : 'radius',
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                lableLine: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {value:0, name:'西班牙'},
+                    {value:0, name:'德国'},
+                    {value:0, name:'英格兰'},
+                    {value:0, name:'意大利'},
+                    {value:0, name:'法国'},
+                    {value:0, name:'葡萄牙'},
+                    {value:0, name:'瑞士'},
+                    {value:0, name:'俄罗斯'},
+                    {value:0, name:'荷兰'},
+                    {value:0, name:'土耳其'},
+                    {value:0, name:'乌克兰'},
+                    {value:0, name:'比利时'},
+                    {value:0, name:'希腊'},
+                    {value:0, name:'阿根廷'},
+                    {value:0, name:'巴西'}
+                ]
+            }
+        ]
+    };
+    option4.legend['data']=['西班牙','德国','英格兰','意大利','法国','葡萄牙','瑞士','俄罗斯','荷兰','土耳其','乌克兰','比利时','希腊','阿根廷','巴西'];
+    var hhh=[12,
+        12,
+        22,
+        14,
+        7,
+        4,
+        1,
+        6,
+        3,
+        4,
+        2,
+        2,
+        1,
+        2,
+        8
+    ];
+    for(var i=0;i<hhh.length;i++) {
+        option4.series[0].data[i]['value'] = hhh[i];
+        option4.series[0].data[i]['name'] =  option4.legend['data'][i];
+    }
+    myChart4.setOption(option4);
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option4.legend['data']=data.hhhhh//各国家/俱乐部前100数量/国家名
+            //var hhh=[12,345,60,43,200,123,45,21,200];
+            for(var i=0;i<hhh.length;i++) {
+                option4.series[0].data[i]['value'] = data.hhh[i];//俱乐部数量
+                option4.series[0].data[i]['name'] =  option4.legend['data'][i];
+            }
+            myChart4.setOption(option4);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+</script>
+<script type="text/javascript">
+    var myChart5 = echarts.init(document.getElementById('main5'));
+    option5 = {
+        title : {
+            text: '各国家前100球星数量',
+            subtext: ' ',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:['巴西',
+                '阿根廷',
+                '德国',
+                '葡萄牙',
+                '法国',
+                '英格兰',
+                '荷兰',
+                '意大利',
+                '波兰',
+                '捷克',
+                '巴拉圭',
+                '苏联',
+                '丹麦',
+                '哥伦比亚',
+                '苏格兰',
+                '保加利亚',
+                '客麦隆',
+                '威尔士',
+                '秘鲁',
+                '西班牙',
+                '爱尔兰',
+                '北爱尔兰',
+                '墨西哥',
+                '比利时',
+                '前西德',
+            ]
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel']
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'数量',
+                type:'pie',
+                radius : [20, 110],
+                center : ['50%', '50%'],
+                roseType : 'radius',
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                lableLine: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {value:0, name:'巴西'},
+                    {value:0, name:'阿根廷'},
+                    {value:0, name:'德国'},
+                    {value:0, name:'葡萄牙'},
+                    {value:0, name:'法国'},
+                    {value:0, name:'英格兰'},
+                    {value:0, name:'荷兰'},
+                    {value:0, name:'意大利'},
+                    {value:0, name:'波兰'},
+                    {value:0, name:'捷克'},
+                    {value:0, name:'巴拉圭'},
+                    {value:0, name:'苏联'},
+                    {value:0, name:'丹麦'},
+                    {value:0, name:'哥伦比亚'},
+                    {value:0, name:'苏格兰'},
+                    {value:0, name:'保加利亚'},
+                    {value:0, name:'客麦隆'},
+                    {value:0, name:'威尔士'},
+                    {value:0, name:'秘鲁'},
+                    {value:0, name:'西班牙'},
+                    {value:0, name:'爱尔兰'},
+                    {value:0, name:'北爱尔兰'},
+                    {value:0, name:'墨西哥'},
+                    {value:0, name:'比利时'},
+                    {value:0, name:'前西德'}
+
+                ]
+            }
+        ]
+    };
+    var hhh=[15,
+        4,
+        8,
+        2,
+        8,
+        6,
+        8,
+        8,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1
+    ];
+    for(var i=0;i<hhh.length;i++) {
+        option5.series[0].data[i]['value'] = hhh[i];
+        option5.series[0].data[i]['name'] =  option5.legend['data'][i];
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option5.legend['data']=data.hhh//各国家/前100球星数量/国家名
+            var hhh=[15,
+                4,
+                8,
+                2,
+                8,
+                6,
+                8,
+                8,
+                1,
+                1,
+                1,
+                2,
+                2,
+                1,
+                1,
+                1,
+                2,
+                1,
+                1,
+                6,
+                1,
+                1,
+                1,
+                1,
+                1
+            ];
+            for(var i=0;i<data.hhh.length;i++) {
+                option5.series[0].data[i]['value'] = data.hhh[i];//前100球星数量
+                option5.series[0].data[i]['name'] =  option5.legend['data'][i];
+            }
+            myChart5.setOption(option5);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart5.setOption(option5);
+</script>
+<script type="text/javascript">
+    var myChart6 = echarts.init(document.getElementById('main6'));
+    option6 = {
+        title : {
+            text: '各国家身价前100球星数量',
+            subtext: ' ',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:['巴西',
+                '阿根廷',
+                '埃及',
+                '英国',
+                '比利时',
+                '法国',
+                '葡萄牙',
+                '德国',
+                '波兰',
+                '丹麦',
+                '西班牙',
+                '塞尔维亚',
+                '斯洛文尼亚',
+                '哥伦比亚',
+                '乌拉圭',
+                '智利',
+                '几内亚',
+                '波黑',
+                '荷兰',
+                '塞内加尔',
+                '美国',
+                '奥地利',
+                '牙买加',
+                '意大利',
+                '威尔士',
+                '斯洛伐克',
+                '韩国',
+                '克罗地亚'
+            ]
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel']
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'数量',
+                type:'pie',
+                radius : [20, 110],
+                center : ['50%', '50%'],
+                roseType : 'radius',
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                lableLine: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {value:0, name:'rose1'},
+                    {value:0, name:'rose2'},
+                    {value:0, name:'rose3'},
+                    {value:0, name:'rose4'},
+                    {value:0, name:'rose5'},
+                    {value:0, name:'rose6'},
+                    {value:0, name:'rose7'},
+                    {value:0, name:'rose8'},
+                    {value:0, name:'rose9'},
+                    {value:0, name:'rose10'},
+                    {value:0, name:'rose11'},
+                    {value:0, name:'rose12'},
+                    {value:0, name:'rose13'},
+                    {value:0, name:'rose14'},
+                    {value:0, name:'rose15'},
+                    {value:0, name:'rose16'},
+                    {value:0, name:'rose17'},
+                    {value:0, name:'rose18'},
+                    {value:0, name:'rose19'},
+                    {value:0, name:'rose20'},
+                    {value:0, name:'rose21'},
+                    {value:0, name:'rose22'},
+                    {value:0, name:'rose23'},
+                    {value:0, name:'rose24'},
+                    {value:0, name:'rose25'},
+                    {value:0, name:'rose26'},
+                    {value:0, name:'rose27'},
+                    {value:0, name:'rose28'}
+                ]
+            }
+        ]
+    };
+    var hhh=[14,
+        4,
+        1,
+        7,
+        5,
+        17,
+        3,
+        9,
+        1,
+        1,
+        13,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1
+    ];
+    for(var i=0;i<hhh.length;i++) {
+        option6.series[0].data[i]['value'] = hhh[i];
+        option6.series[0].data[i]['name'] =  option6.legend['data'][i];
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option6.legend['data']=data.hhhhh//各国家/身价前100球星数量/国家名
+            //var hhh=[12,345,60,43,200,123,45,21,200];
+            for(var i=0;i<data.hhh.length;i++) {
+                option6.series[0].data[i]['value'] = data.hhh[i];//身价前100球星数量
+                option6.series[0].data[i]['name'] =  option6.legend['data'][i];
+            }
+            myChart6.setOption(option6);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+
+    myChart6.setOption(option6);
+</script>
+
+<script type="text/javascript">
+    window.onresize = function () {
+
+        myChart11.resize();
+        myChart12.resize();
+        myChart13.resize();
+        myChart3.resize();
+        myChart4.resize();
+        myChart5.resize();
+        myChart6.resize();
+    };
+</script>
+</body>
+</html>

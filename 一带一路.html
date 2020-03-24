@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>舆情监测平台</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+    <!--[if lt IE 9]>
+
+    <script src="e-chart/echarts.js"></script>
+    <script src='e-chart/echarts-wordcloud.js'></script>
+    <script src='e-chart/china.js'></script>
+    <![endif]-->
+    <link href='assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery ui -->
+    <link href='assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / switch buttons -->
+    <link href='assets/stylesheets/plugins/bootstrap_switch/bootstrap-switch.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / xeditable -->
+    <link href='assets/stylesheets/plugins/xeditable/bootstrap-editable.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / wysihtml5 (wysywig) -->
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery file upload -->
+    <link href='assets/stylesheets/plugins/jquery_fileupload/jquery.fileupload-ui.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / full calendar -->
+    <link href='assets/stylesheets/plugins/fullcalendar/fullcalendar.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / select2 -->
+    <link href='assets/stylesheets/plugins/select2/select2.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / mention -->
+    <link href='assets/stylesheets/plugins/mention/mention.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / tabdrop (responsive tabs) -->
+    <link href='assets/stylesheets/plugins/tabdrop/tabdrop.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jgrowl notifications -->
+    <link href='assets/stylesheets/plugins/jgrowl/jquery.jgrowl.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datatables -->
+    <link href='assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / dynatrees (file trees) -->
+    <link href='assets/stylesheets/plugins/dynatree/ui.dynatree.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / color picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_colorpicker/bootstrap-colorpicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datetime picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / daterange picker) -->
+    <link href='assets/stylesheets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flags (country flags) -->
+    <link href='assets/stylesheets/plugins/flags/flags.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / slider nav (address book) -->
+    <link href='assets/stylesheets/plugins/slider_nav/slidernav.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / fuelux (wizard) -->
+    <link href='assets/stylesheets/plugins/fuelux/wizard.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flatty theme -->
+    <link href='assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <!-- / demo -->
+    <link href='assets/stylesheets/demo.css' media='all' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class='contrast-red '>
+<header>
+    <div class='navbar'>
+        <div class='navbar-inner'>
+            <div class='container-fluid'>
+                <a class='brand' href='index.html'>
+                    <i class='icon-heart-empty'></i>
+                    <span class='hidden-phone'>菜单</span>
+                </a>
+                <a class='toggle-nav btn pull-left' href='#'>
+                    <i class='icon-reorder'></i>
+                </a>
+                <ul class='nav pull-right'>
+                    <li class='dropdown light only-icon'>
+                        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                            <i class='icon-adjust'></i>
+                        </a>
+                        <ul class='dropdown-menu color-settings'>
+                            <li class='color-settings-contrast-color'>
+                                <div class='color-title'>设置颜色</div>
+                                <a href="#" data-change-to="contrast-red"><i class='icon-adjust text-red'></i>
+                                    红
+                                    <small>(默认)</small>
+                                </a>
+                                <a href="#" data-change-to="contrast-blue"><i class='icon-adjust text-blue'></i>
+                                    蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-orange"><i class='icon-adjust text-orange'></i>
+                                    橙
+                                </a>
+                                <a href="#" data-change-to="contrast-purple"><i class='icon-adjust text-purple'></i>
+                                    紫
+                                </a>
+                                <a href="#" data-change-to="contrast-green"><i class='icon-adjust text-green'></i>
+                                    绿
+                                </a>
+                                <a href="#" data-change-to="contrast-muted"><i class='icon-adjust text-muted'></i>
+                                    柔和
+                                </a>
+                                <a href="#" data-change-to="contrast-fb"><i class='icon-adjust text-fb'></i>
+                                    深蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-dark"><i class='icon-adjust text-dark'></i>
+                                    黑
+                                </a>
+                                <a href="#" data-change-to="contrast-pink"><i class='icon-adjust text-pink'></i>
+                                    粉
+                                </a>
+                                <a href="#" data-change-to="contrast-grass-green"><i class='icon-adjust text-grass-green'></i>
+                                    草绿
+                                </a>
+                                <a href="#" data-change-to="contrast-sea-blue"><i class='icon-adjust text-sea-blue'></i>
+                                    海蓝
+                                </a>
+                                <a href="#" data-change-to="contrast-banana"><i class='icon-adjust text-banana'></i>
+                                    蕉黄
+                                </a>
+                                <a href="#" data-change-to="contrast-dark-orange"><i class='icon-adjust text-dark-orange'></i>
+                                    暗橙
+                                </a>
+                                <a href="#" data-change-to="contrast-brown"><i class='icon-adjust text-brown'></i>
+                                    棕
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div id='wrapper'>
+    <div id='main-nav-bg'></div>
+    <nav class='' id='main-nav'>
+        <div class='navigation'>
+            <div class='search'>
+
+            </div>
+            <ul class='nav nav-stacked'>
+                <li class=''>
+                    <a href='index.html'>
+                        <i class='icon-cloud'></i>
+                        <span>关键词云</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class='dropdown-collapse in' href='#'>
+                        <i class='icon-star'></i>
+                        <span>热点新闻</span>
+                        <i class='icon-angle-down angle-down'></i>
+                    </a>
+                    <ul class='in nav nav-stacked'>
+                        <li class=''>
+                            <a href="WorldCup.html">
+                                <i class='icon-caret-right'></i>
+                                <span>世界杯</span>
+                            </a>
+                        </li>
+                        <li class='active'>
+                            <a href="一带一路.html">
+                                <i class='icon-caret-right'></i>
+                                <span>一带一路</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="Rain.html">
+                                <i class='icon-caret-right'></i>
+                                <span>暴雨事件</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class='dropdown-collapse' href='#'>
+                        <i class='icon-edit'></i>
+                        <span>普通新闻</span>
+                        <i class='icon-angle-down angle-down'></i>
+                    </a>
+                    <ul class='nav nav-stacked'>
+                        <li class=''>
+                            <a href="one.html">
+                                <i class='icon-caret-right'></i>
+                                <span>碧桂园负债</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="two.html">
+                                <i class='icon-caret-right'></i>
+                                <span>成油价格降低</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="three.html">
+                                <i class='icon-caret-right'></i>
+                                <span>答题卡调包</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="four.html">
+                                <i class='icon-caret-right'></i>
+                                <span>个税降低</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="five.html">
+                                <i class='icon-caret-right'></i>
+                                <span>华为超苹果</span>
+                            </a>
+                        </li>
+
+                        <li class=''>
+                            <a href="seven.html">
+                                <i class='icon-caret-right'></i>
+                                <span>普吉岛沉船</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="eight.html">
+                                <i class='icon-caret-right'></i>
+                                <span>王石董事长</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="nine.html">
+                                <i class='icon-caret-right'></i>
+                                <span>小米IPO</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="ten.html">
+                                <i class='icon-caret-right'></i>
+                                <span>疫苗造假</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="eleven.html">
+                                <i class='icon-caret-right'></i>
+                                <span>阴阳合同</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="twelve.html">
+                                <i class='icon-caret-right'></i>
+                                <span>支付宝上线拼团</span>
+                            </a>
+                        </li>
+                        <li class=''>
+                            <a href="thirteen.html">
+                                <i class='icon-caret-right'></i>
+                                <span>工商局调查拼多多</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=''>
+                    <a href='start.html'>
+                        <i class='icon-signin'></i>
+                        <span>退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id='content'>
+        <div class='container-fluid'>
+            <div class='row-fluid' id='content-wrapper'>
+                <div class='span12'>
+                    <div class='row-fluid'>
+                        <div class='span12'>
+                            <div class='page-header'>
+                                <h1 class='pull-left'>
+                                    <i class='icon-bar-chart'></i>
+                                    <span>一带一路&上合组织</span>
+                                </h1>
+                                <div class='pull-right'>
+                                    <ul class='breadcrumb'>
+                                        <li>
+                                            <a href="index.html"><i class='icon-bar-chart'></i>
+                                            </a>
+                                        </li>
+                                        <li class='separator'>
+                                            <i class='icon-angle-right'></i>
+                                        </li>
+                                        <li>热点新闻</li>
+                                        <li class='separator'>
+                                            <i class='icon-angle-right'></i>
+                                        </li>
+                                        <li class='active'>一带一路</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    路线
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main" style="width:auto;height:800px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class='hr-double' />
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    总体关注度
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main0" style="width:auto;height:400px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row-fluid'>
+                        <div class='span12 box'>
+                            <div class='box-header'>
+                                <div class='title'>
+                                    交通情况
+                                </div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div id="main01" style="width:auto;height:400px;" align="center" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class='hr-double' />
+                    <div class='row-fluid'>
+                        <div class='span12 box' style='margin-bottom: 0'>
+                            <div class='box-header'>
+                                <div class='title'>分析</div>
+                                <div class='actions'>
+                                    <a href="#" class="btn box-remove btn-mini btn-link"><i class='icon-remove'></i>
+                                    </a>
+                                    <a href="#" class="btn box-collapse btn-mini btn-link"><i></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='box-content'>
+                                <div class='tabbable' style='margin-top: 20px' id="myTab">
+                                    <ul  class='nav nav-responsive nav-tabs'>
+                                        <li class='active'>
+                                            <a data-toggle='tab' href='#retab1' onclick="javascript:window.onresize()">
+                                                哈萨克斯坦共和国
+                                            </a>
+                                        </li>
+                                        <li class=''>
+                                            <a data-toggle='tab' href='#retab2' onclick="javascript:window.onresize()">
+                                                吉尔吉斯斯坦共和国
+                                            </a>
+                                        </li>
+                                        <li class=''>
+                                            <a data-toggle='tab' href='#retab3' onclick="javascript:window.onresize()">
+                                                俄罗斯联邦
+                                            </a>
+                                        </li>
+                                        <li class=''>
+                                            <a data-toggle='tab' href='#retab4' onclick="javascript:window.onresize()">
+                                                塔吉克斯坦共和国
+                                            </a>
+                                        </li>
+                                        <li class=''>
+                                            <a data-toggle='tab' href='#retab5' onclick="javascript:window.onresize()">
+                                                乌兹别克斯坦共和国
+                                            </a>
+                                        </li>
+                                        <li class=''>
+                                            <a data-toggle='tab' href='#retab6' onclick="javascript:window.onresize()">
+                                                印度
+                                            </a>
+                                        </li>
+                                        <li class=''>
+                                            <a data-toggle='tab' href='#retab7' onclick="javascript:window.onresize()">
+                                                巴基斯坦
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class='tab-content'>
+                                        <div class="tab-pane active" id="retab1" >
+                                            <div class='box-content'>
+                                                <div id="main11" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="retab2">
+                                            <div class='box-content' >
+                                                <div id="main21" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="retab3">
+                                            <div class='box-content'>
+                                                <div id="main31" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="retab4">
+                                            <div class='box-content'>
+                                                <div id="main41" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="retab5">
+                                            <div class='box-content'>
+                                                <div id="main51" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="retab6">
+                                            <div class='box-content'>
+                                                <div id="main61" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="retab7">
+                                            <div class='box-content'>
+                                                <div id="main71" style="width:auto;height:400px;" align="center" ></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class='hr-double' />
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<!-- / jquery -->
+<script src='assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+<!-- / jquery mobile events (for touch and slide) -->
+<script src='assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js' type='text/javascript'></script>
+<!-- / jquery migrate (for compatibility with new jquery) -->
+<script src='assets/javascripts/jquery/jquery-migrate.min.js' type='text/javascript'></script>
+<!-- / jquery ui -->
+<script src='assets/javascripts/jquery_ui/jquery-ui.min.js' type='text/javascript'></script>
+<!-- / bootstrap -->
+<script src='assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/excanvas.js' type='text/javascript'></script>
+<!-- / sparklines -->
+<script src='assets/javascripts/plugins/sparklines/jquery.sparkline.min.js' type='text/javascript'></script>
+<!-- / flot charts -->
+<script src='assets/javascripts/plugins/flot/flot.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.resize.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.pie.js' type='text/javascript'></script>
+<!-- / bootstrap switch -->
+<script src='assets/javascripts/plugins/bootstrap_switch/bootstrapSwitch.min.js' type='text/javascript'></script>
+<!-- / fullcalendar -->
+<script src='assets/javascripts/plugins/fullcalendar/fullcalendar.min.js' type='text/javascript'></script>
+<!-- / datatables -->
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+<!-- / wysihtml5 -->
+<script src='assets/javascripts/plugins/common/wysihtml5.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/common/bootstrap-wysihtml5.js' type='text/javascript'></script>
+<!-- / select2 -->
+<script src='assets/javascripts/plugins/select2/select2.js' type='text/javascript'></script>
+<!-- / color picker -->
+<script src='assets/javascripts/plugins/bootstrap_colorpicker/bootstrap-colorpicker.min.js' type='text/javascript'></script>
+<!-- / mention -->
+<script src='assets/javascripts/plugins/mention/mention.min.js' type='text/javascript'></script>
+<!-- / input mask -->
+<script src='assets/javascripts/plugins/input_mask/bootstrap-inputmask.min.js' type='text/javascript'></script>
+<!-- / fileinput -->
+<script src='assets/javascripts/plugins/fileinput/bootstrap-fileinput.js' type='text/javascript'></script>
+<!-- / modernizr -->
+<script src='assets/javascripts/plugins/modernizr/modernizr.min.js' type='text/javascript'></script>
+<!-- / retina -->
+<script src='assets/javascripts/plugins/retina/retina.js' type='text/javascript'></script>
+<!-- / fileupload -->
+<script src='assets/javascripts/plugins/fileupload/tmpl.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/load-image.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/canvas-to-blob.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.iframe-transport.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-fp.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-ui.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/fileupload/jquery.fileupload-init.js' type='text/javascript'></script>
+<!-- / timeago -->
+<script src='assets/javascripts/plugins/timeago/jquery.timeago.js' type='text/javascript'></script>
+<!-- / slimscroll -->
+<script src='assets/javascripts/plugins/slimscroll/jquery.slimscroll.min.js' type='text/javascript'></script>
+<!-- / autosize (for textareas) -->
+<script src='assets/javascripts/plugins/autosize/jquery.autosize-min.js' type='text/javascript'></script>
+<!-- / charCount -->
+<script src='assets/javascripts/plugins/charCount/charCount.js' type='text/javascript'></script>
+<!-- / validate -->
+<script src='assets/javascripts/plugins/validate/jquery.validate.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+<!-- / naked password -->
+<script src='assets/javascripts/plugins/naked_password/naked_password-0.2.4.min.js' type='text/javascript'></script>
+<!-- / nestable -->
+<script src='assets/javascripts/plugins/nestable/jquery.nestable.js' type='text/javascript'></script>
+<!-- / tabdrop -->
+<script src='assets/javascripts/plugins/tabdrop/bootstrap-tabdrop.js' type='text/javascript'></script>
+<!-- / jgrowl -->
+<script src='assets/javascripts/plugins/jgrowl/jquery.jgrowl.min.js' type='text/javascript'></script>
+<!-- / bootbox -->
+<script src='assets/javascripts/plugins/bootbox/bootbox.min.js' type='text/javascript'></script>
+<!-- / inplace editing -->
+<script src='assets/javascripts/plugins/xeditable/bootstrap-editable.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/xeditable/wysihtml5.js' type='text/javascript'></script>
+<!-- / ckeditor -->
+<script src='assets/javascripts/plugins/ckeditor/ckeditor.js' type='text/javascript'></script>
+<!-- / filetrees -->
+<script src='assets/javascripts/plugins/dynatree/jquery.dynatree.min.js' type='text/javascript'></script>
+<!-- / datetime picker -->
+<script src='assets/javascripts/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.js' type='text/javascript'></script>
+<!-- / daterange picker -->
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/moment.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js' type='text/javascript'></script>
+<!-- / max length -->
+<script src='assets/javascripts/plugins/bootstrap_maxlength/bootstrap-maxlength.min.js' type='text/javascript'></script>
+<!-- / dropdown hover -->
+<script src='assets/javascripts/plugins/bootstrap_hover_dropdown/twitter-bootstrap-hover-dropdown.min.js' type='text/javascript'></script>
+<!-- / slider nav (address book) -->
+<script src='assets/javascripts/plugins/slider_nav/slidernav-min.js' type='text/javascript'></script>
+<!-- / fuelux -->
+<script src='assets/javascripts/plugins/fuelux/wizard.js' type='text/javascript'></script>
+<!-- / flatty theme -->
+<script src='assets/javascripts/nav.js' type='text/javascript'></script>
+<script src='assets/javascripts/tables.js' type='text/javascript'></script>
+<script src='assets/javascripts/theme.js' type='text/javascript'></script>
+<!-- / demo -->
+<script src='assets/javascripts/demo/jquery.mockjax.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/inplace_editing.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/charts.js' type='text/javascript'></script>
+<script src='assets/javascripts/demo/demo.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="e-chart/echarts.min.js"></script>
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>-->
+<script type="text/javascript" src="e-chart/china.js"></script>
+<script type="text/javascript" src="e-chart/world.js"></script>
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>-->
+<!--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="e-chart/lib/esl.js"></script>
+<script src="e-chart/lib/config.js"></script>
+<script src="e-chart/lib/jquery.min.js"></script>
+<script src="e-chart/lib/facePrint.js"></script>
+<script src="e-chart/lib/testHelper.js"></script>
+<link rel="stylesheet" href="e-chart/lib/reset.css">
+<script type="text/javascript" src="e-chart/echarts-gl.min.js"></script>
+
+<script type='text/javascript'>
+    var myChart = echarts.init(document.getElementById('main'));
+    var geoCoordMap = {
+        '中华人民共和国': [116.3, 33.9],
+        '哈萨克斯坦共和国': [71.26, 51.11],
+        '吉尔吉斯斯坦': [74.46, 42.53],
+        '俄罗斯联邦': [37.37, 55.45],
+        '塔吉克斯坦': [68.8, 38.5],
+        '乌兹别克斯坦': [69.18, 41.2],
+        '印度': [77.13, 28.37],
+        '巴基斯坦': [73.08,33.4]
+    };
+    var BJData = [
+        [{
+            name: '哈萨克斯坦共和国',
+            value: 9100
+        }, {
+            name: '中华人民共和国'
+        }],
+        [{
+            name: '吉尔吉斯斯坦',
+            value: 2370
+        }, {
+            name: '中华人民共和国'
+        }],
+        [{
+            name: '俄罗斯联邦',
+            value: 3130
+        }, {
+            name: '中华人民共和国'
+        }],
+        [{
+            name: '塔吉克斯坦',
+            value: 2350
+        }, {
+            name: '中华人民共和国'
+        }],
+        [{
+            name: '乌兹别克斯坦',
+            value: 5120
+        }, {
+            name: '中华人民共和国'
+        }],
+        [{
+            name: '印度',
+            value: 3110
+        }, {
+            name: '中华人民共和国'
+        }],
+        [{
+            name: '巴基斯坦',
+            value: 6280
+        }, {
+            name: '中华人民共和国'
+        }]
+    ];
+    var convertData = function(data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var dataItem = data[i];
+            var fromCoord = geoCoordMap[dataItem[0].name];
+            var toCoord = geoCoordMap[dataItem[1].name];
+            if (fromCoord && toCoord) {
+                res.push([{
+                    coord: fromCoord,
+                    value: dataItem[0].value
+                }, {
+                    coord: toCoord,
+                }]);
+            }
+        }
+        return res;
+    };
+
+    var color = ['#a6c84c', '#ffa022', '#46bee9'];
+    var series = [];
+    [
+        ['中华人民共和国', BJData]
+    ].forEach(function(item, i) {
+        series.push(
+
+            {
+                type: 'lines',
+                zlevel: 2,
+                effect: {
+                    show: true,
+                    period: 4, //箭头指向速度，值越小速度越快
+                    trailLength: 0.02, //特效尾迹长度[0,1]值越大，尾迹越长重
+                    symbol: 'arrow', //箭头图标
+                    symbolSize: 5, //图标大小
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1, //尾迹线条宽度
+                        opacity: 0, //尾迹线条透明度
+                        curveness: .3 //尾迹线条曲直度
+                    }
+                },
+
+                data: convertData(item[1])
+            }, {
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: { //涟漪特效
+                    period: 4, //动画时间，值越小速度越快
+                    brushType: 'stroke', //波纹绘制方式 stroke, fill
+                    scale: 4 //波纹圆环最大限制，值越大波纹越大
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right', //显示位置
+                        offset: [5, 0], //偏移设置
+                        formatter: '{b}' //圆环显示文字
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                symbol: 'circle',
+                symbolSize: function(val) {
+                    return 4 + val[2] / 1000; //圆环大小
+                },
+                itemStyle: {
+                    normal: {
+                        show: false,
+                        color: '#f00'
+                    }
+                },
+                data: item[1].map(function(dataItem) {
+                    return {
+                        name: dataItem[0].name,
+                        value: geoCoordMap[dataItem[0].name].concat([dataItem[0].value])
+                    };
+                }),
+            },
+            //被攻击点
+            {
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: {
+                    period: 4,
+                    brushType: 'stroke',
+                    scale: 4
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        //offset:[5, 0],
+                        color: '#00ffff',
+                        formatter: '{b}',
+                        textStyle: {
+                            color: "#00ffff"
+                        }
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                symbol: 'pin',
+                symbolSize: 30,
+                itemStyle: {
+                    normal: {
+                        show: true,
+                        color: '#9966cc'
+                    }
+                },
+                data: [{
+                    name: item[0],
+                    value: geoCoordMap[item[0]].concat([100]),
+                }],
+            }
+        );
+    });
+
+    option = {
+        backgroundColor: '#404a59',
+        title: {
+            text: '中华人民共和国',
+            left: 'center',
+            textStyle: {
+                color: '#fff',
+                fontSize: 24
+            },
+            padding: [20, 20, 20, 20]
+        },
+        tooltip: {
+            trigger: 'item',
+            backgroundColor: 'rgba(12, 204, 104, 0.92)',
+            borderColor: '#FFFFCC',
+            showDelay: 0,
+            hideDelay: 0,
+            enterable: true,
+            transitionDuration: 0,
+            extraCssText: 'z-index:100',
+            formatter: function(params, ticket, callback) {
+                //根据业务自己拓展要显示的内容
+                var res = "";
+                var name = params.name;
+                var value = params.value[params.seriesIndex + 1];
+                res = "<span style='color:#fff;'>" + name + "</span><br/>" ;
+                return res;
+            }
+        },
+        visualMap: { //图例值控制
+            min: 0,
+            max: 10000,
+            calculable: true,
+            color: ['#ff3333', 'orange', 'yellow', 'lime', 'aqua'],
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        geo: {
+            map: 'world',
+            label: {
+                emphasis: {
+                    show: false
+                }
+            },
+            roam: true, //是否允许缩放
+            layoutCenter: ['50%', '50%'], //地图位置
+            layoutSize: "140%",
+            itemStyle: {
+                normal: {
+                    color: 'rgba(51, 69, 89, .5)', //地图背景色
+                    borderColor: 'rgba(100,149,237,1)' //省市边界线
+                },
+                emphasis: {
+                    color: 'rgba(37, 43, 61, .5)' //悬浮背景
+                }
+            }
+        },
+
+        series: series
+    };
+
+    var counts = option.series[0].data.length; //获取所有闪动圆环数量
+    var dataIndex = 0;
+    //让圆环的提示框自动触发轮播显示
+    function autoHoverTip() {
+        for (var i = 0; i < counts; i++) {
+            (function(i) {
+                ts = setTimeout(function() {
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 1,
+                        dataIndex: i
+                    });
+                }, 5000 * i);
+            })(i);
+        }
+    }
+
+    setTimeout(function() {
+        autoHoverTip();
+        tv = setInterval(autoHoverTip, counts * 1000);
+    }, 500);
+
+    myChart.setOption(option);
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart0 = echarts.init(document.getElementById('main0'));
+    option0 = null;
+    option0 = {
+        title : {
+            text: '关注度',
+
+            x: 'center',
+            align: 'right'
+        },
+        grid: {
+            bottom: 80
+        },
+        toolbox: {
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                animation: false,
+                label: {
+                    backgroundColor: '#505765'
+                }
+            }
+        },
+        legend: {
+            data:['搜索指数','pc趋势','移动趋势'],
+            x: 'left'
+        },
+        dataZoom: [
+            {
+                show: true,
+                realtime: true,
+                start: 65,
+                end: 85
+            },
+            {
+                type: 'inside',
+                realtime: true,
+                start: 65,
+                end: 85
+            }
+        ],
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                data : ['2018/6/1',
+                    '2018/6/2',
+                    '2018/6/3',
+                    '2018/6/4',
+                    '2018/6/5',
+                    '2018/6/6',
+                    '2018/6/7',
+                    '2018/6/8',
+                    '2018/6/9',
+                    '2018/6/10',
+                    '2018/6/11',
+                    '2018/6/12',
+                    '2018/6/13',
+                    '2018/6/14',
+                    '2018/6/15',
+                    '2018/6/16',
+                    '2018/6/17',
+                    '2018/6/18',
+                    '2018/6/19',
+                    '2018/6/20',
+                    '2018/6/21',
+                    '2018/6/22',
+                    '2018/6/23',
+                    '2018/6/24',
+                    '2018/6/25',
+                    '2018/6/26',
+                    '2018/6/27',
+                    '2018/6/28',
+                    '2018/6/29',
+                    '2018/6/30',
+                    '2018/7/1',
+                    '2018/7/2',
+                    '2018/7/3',
+                    '2018/7/4',
+                    '2018/7/5',
+                    '2018/7/6',
+                    '2018/7/7',
+                    '2018/7/8',
+                    '2018/7/9',
+                    '2018/7/10',
+                    '2018/7/11',
+                    '2018/7/12',
+                    '2018/7/13',
+                    '2018/7/14',
+                    '2018/7/15',
+                    '2018/7/16',
+                    '2018/7/17',
+                    '2018/7/18',
+                    '2018/7/19',
+                    '2018/7/20',
+                    '2018/7/21',
+                    '2018/7/22',
+                    '2018/7/23',
+                    '2018/7/24',
+                    '2018/7/25',
+                    '2018/7/26',
+                    '2018/7/27',
+                    '2018/7/28',
+                    '2018/7/29',
+                    '2018/7/30',
+                    '2018/7/31',
+                    '2018/8/1',
+                    '2018/8/2',
+                    '2018/8/3',
+                    '2018/8/4',
+                    '2018/8/5',
+                    '2018/8/6',
+                    '2018/8/7',
+                    '2018/8/8',
+                    '2018/8/9',
+                    '2018/8/10',
+                    '2018/8/11',
+                    '2018/8/12'
+                ].map(function (str) {
+                    return str.replace(' ', '\n')
+                })
+            }
+        ],
+        yAxis: [
+            {
+                name: '关注量',
+                type: 'value',
+                max: 14000
+            }
+        ],
+        series: [
+            {
+                name:'搜索指数',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[6794,
+                    5912,
+                    7091,
+                    9217,
+                    9990,
+                    13602,
+                    12750,
+                    10642,
+                    9526,
+                    11343,
+                    11966,
+                    10907,
+                    10595,
+                    9942,
+                    8208,
+                    6510,
+                    5791,
+                    6659,
+                    10321,
+                    10336,
+                    9785,
+                    9234,
+                    7051,
+                    6823,
+                    8518,
+                    8460,
+                    8121,
+                    7571,
+                    7129,
+                    5157,
+                    4660,
+                    6620,
+                    6534,
+                    6584,
+                    6496,
+                    5856,
+                    4319,
+                    3954,
+                    5770,
+                    6738,
+                    5597,
+                    5483,
+                    5138,
+                    3635,
+                    3325,
+                    5006,
+                    5509,
+                    5320,
+                    5339,
+                    5318,
+                    4849,
+                    5353,
+                    6224,
+                    5534,
+                    5121,
+                    5760,
+                    6305,
+                    3447,
+                    3051,
+                    4575,
+                    4678,
+                    4524,
+                    4949,
+                    4750,
+                    3628,
+                    3019,
+                    4233,
+                    5306,
+                    4730,
+                    4570,
+                    5855,
+                    4071,
+                    4105
+                ]
+            },
+            {
+                name:'pc趋势',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[2587,
+                    1749,
+                    2157,
+                    3351,
+                    3342,
+                    3742,
+                    3642,
+                    3106,
+                    2209,
+                    2595,
+                    3858,
+                    3520,
+                    3607,
+                    3286,
+                    2529,
+                    1286,
+                    1447,
+                    1861,
+                    3577,
+                    3396,
+                    3212,
+                    2939,
+                    1933,
+                    2019,
+                    3120,
+                    3157,
+                    2942,
+                    2733,
+                    2391,
+                    1422,
+                    1380,
+                    2409,
+                    2507,
+                    2561,
+                    2520,
+                    2174,
+                    1159,
+                    1092,
+                    2345,
+                    2493,
+                    2367,
+                    2362,
+                    2084,
+                    990,
+                    995,
+                    2095,
+                    2512,
+                    2284,
+                    2250,
+                    2036,
+                    1231,
+                    1266,
+                    2529,
+                    2405,
+                    2203,
+                    2335,
+                    2231,
+                    758,
+                    470,
+                    1765,
+                    1901,
+                    2001,
+                    2364,
+                    1933,
+                    981,
+                    927,
+                    1991,
+                    2633,
+                    2155,
+                    1987,
+                    2255,
+                    1164,
+                    1200
+                ]
+            },
+            {
+                name:'移动趋势',
+                type:'line',
+                animation: false,
+                areaStyle: {
+                    normal: {}
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                },
+                data:[4207,
+                    4163,
+                    4934,
+                    5866,
+                    6648,
+                    9860,
+                    9108,
+                    7536,
+                    7317,
+                    8748,
+                    8108,
+                    7387,
+                    6988,
+                    6656,
+                    5679,
+                    5224,
+                    4344,
+                    4798,
+                    6744,
+                    6940,
+                    6573,
+                    6295,
+                    5118,
+                    4804,
+                    5398,
+                    5303,
+                    5179,
+                    4838,
+                    4738,
+                    3735,
+                    3280,
+                    4211,
+                    4027,
+                    4023,
+                    3976,
+                    3682,
+                    3160,
+                    2862,
+                    3425,
+                    4245,
+                    3230,
+                    3121,
+                    3054,
+                    2645,
+                    2330,
+                    2911,
+                    2997,
+                    3036,
+                    3089,
+                    3282,
+                    3618,
+                    4087,
+                    3695,
+                    3129,
+                    2918,
+                    3425,
+                    4074,
+                    2689,
+                    2581,
+                    2810,
+                    2777,
+                    2523,
+                    2585,
+                    2817,
+                    2647,
+                    2092,
+                    2242,
+                    2673,
+                    2575,
+                    2583,
+                    3600,
+                    2907,
+                    2905
+                ]
+            }
+
+        ]
+    };
+    myChart0.setOption(option0);
+</script>
+
+<script type="text/javascript">
+    var myChart01 = echarts.init(document.getElementById('main01'));
+    option01 = null;
+    option01 = {
+        title : {
+            text: '一带一路重点国家交通',
+
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['公路','铁路','空运']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            },
+
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['中国','哈萨克斯坦 ','吉尔吉斯斯坦','俄罗斯','塔吉克斯坦','乌兹别克斯坦','印度','巴基斯坦']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'公路',
+                type:'bar',
+                data:[4696300,93600,34000,1094000,3000,74400,67000,8900],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'铁路',
+                type:'bar',
+                data:[124000,15200,423.9,122000,1000,6000,63000,12000],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'空运',
+                type:'bar',
+                data:[218,22,14,232,3,54,450,21],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option01.xAxis[0]['data']=data.hhhhh;//一带一路国家名
+            option01.series[0]['data']=data.hhhhhhh0;//一带一路公路
+            option01.series[1]['data']=data.hhhhhhh1;//一带一路铁路
+            option01.series[2]['data']=data.hhhhhhh2;//一带一路空运
+            myChart01.setOption(option01);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+
+    myChart01.setOption(option01);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart11 = echarts.init(document.getElementById('main11'));
+    option11 = {
+        title: {
+            text: '哈萨克斯坦进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[464,489,269,457,155.1,293.05]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[864,825,4729.8,302,328.6,83.42]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[1328,1314,998.9,759,483.7,776.47]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option11.xAxis[0]['data']=data.hhhhh;//年份
+            option11.series[0]['data']=data.hhhhhhh0;//哈萨克斯坦进口额
+            option11.series[1]['data']=data.hhhhhhh1;//哈萨克斯坦出口额
+            option11.series[2]['data']=data.hhhhhhh2;//哈萨克斯坦进出口额
+            myChart31.setOption(option11);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart11.setOption(option11);
+</script><!设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart21 = echarts.init(document.getElementById('main21'));
+    option21 = {
+        title: {
+            text: '吉尔吉斯坦进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[53.74,60.7,3178,23.97,40.695,39.19,44.813]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[18.94,20.2,5264,7.32,16.764,15.44,17.907]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[72.68,80.9,8442,31.29,57.459,54.63,62.72]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option21.xAxis[0]['data']=data.hhhhh;//年份
+            option21.series[0]['data']=data.hhhhhhh0;//吉尔吉斯坦进口额
+            option21.series[1]['data']=data.hhhhhhh1;//吉尔吉斯坦出口额
+            option21.series[2]['data']=data.hhhhhhh2;//吉尔吉斯坦进出口额
+            myChart21.setOption(option21);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart21.setOption(option21);
+</script><!设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart31 = echarts.init(document.getElementById('main31'));
+    option31 = {
+        title: {
+            text: '俄罗斯联邦进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[3125.67,3178,2868,1824,1827.8,2270]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[5247.27,5264,5071.7,3434.3,3439.1,3570]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[8372.95,8442,7939.7,5258.3,5266.9,5840]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option31.xAxis[0]['data']=data.hhhhh;//年份
+            option31.series[0]['data']=data.hhhhhhh0;//俄罗斯联邦进口额
+            option31.series[1]['data']=data.hhhhhhh1;//俄罗斯联邦出口额
+            option31.series[2]['data']=data.hhhhhhh2;//俄罗斯联邦进出口额
+            myChart31.setOption(option31);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart31.setOption(option31);
+</script><!3设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart41 = echarts.init(document.getElementById('main41'));
+    option41 = {
+        title: {
+            text: '塔吉克斯坦进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[0,0,0,34.5,15,27.75]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[0,0,0,8.9,4.39,12]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[18.56,0,0,43.4,19.39,39.75]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option41.xAxis[0]['data']=data.hhhhh;//年份
+            option41.series[0]['data']=data.hhhhhhh0;//塔吉克斯坦进口额
+            option41.series[1]['data']=data.hhhhhhh1;//塔吉克斯坦出口额
+            option41.series[2]['data']=data.hhhhhhh2;//塔吉克斯坦进出口额
+            myChart41.setOption(option41);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart41.setOption(option41);
+</script><!4设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart51 = echarts.init(document.getElementById('main51'));
+    option51 = {
+        title: {
+            text: '乌兹别克斯坦进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[0,137.89,22.6,140,16.07,44.813]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[0,150.87,20.2,130,20.09,17.907]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[28.75,288.76,42.8,270,36.16,62.72]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option51.xAxis[0]['data']=data.hhhhh;//年份
+            option51.series[0]['data']=data.hhhhhhh0;//乌兹别克斯坦进口额
+            option51.series[1]['data']=data.hhhhhhh1;//乌兹别克斯坦出口额
+            option51.series[2]['data']=data.hhhhhhh2;//乌兹别克斯坦进出口额
+            myChart51.setOption(option51);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart51.setOption(option51);
+</script><!5设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart61 = echarts.init(document.getElementById('main61'));
+    option61 = {
+        title: {
+            text: '印度进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[4879,4675.58,4601.1,3919,117.6,4469.4]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[2968,3124.70,3195.5,2673,583.9,2965.5]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[7847,7800.28,7796.6,6592,701.5,7434.9]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option61.xAxis[0]['data']=data.hhhhh;//年份
+            option61.series[0]['data']=data.hhhhhhh0;//印度进口额
+            option61.series[1]['data']=data.hhhhhhh1;//印度出口额
+            option61.series[2]['data']=data.hhhhhhh2;//印度进出口额
+            myChart61.setOption(option61);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart61.setOption(option61);
+</script><!6设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart71 = echarts.init(document.getElementById('main71'));
+    option71 = {
+        title: {
+            text: '巴基斯坦进出口额'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['进口额','出口额','进出口总额']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: [2012,2013,2014,2015,2016,2017]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name:'进口额',
+                type:'line',
+                stack: '总量',
+                data:[442,401.99,101,442.19,530.26,0]
+            },
+            {
+                name:'出口额',
+                type:'line',
+                stack: '总量',
+                data:[246,247.95,21,221.88,204.48,242]
+            },
+            {
+                name:'进出口总额',
+                type:'line',
+                stack: '总量',
+                data:[688,649.94,122,664.07,734.74,242]
+            }
+        ]
+    };
+    $.ajax({
+        type: 'GET',
+        url : '<%=path %>/',
+        dataType: 'json',
+        success:function(data){
+            debugger;
+            option71.xAxis[0]['data']=data.hhhhh;//年份
+            option71.series[0]['data']=data.hhhhhhh0;//巴基斯坦进口额
+            option71.series[1]['data']=data.hhhhhhh1;//巴基斯坦出口额
+            option71.series[2]['data']=data.hhhhhhh2;//巴基斯坦进出口额
+            myChart71.setOption(option71);
+        },
+        error:function(){
+            debugger;
+        },
+        complete:function(){
+            //不管数据接口成功或异常，都终于载入提示
+            myChart.hideLoading();//停止动画载入提示
+        }
+    })
+    myChart71.setOption(option71);
+</script><!7设施联通，公路，铁路，航线，通讯卫星，水路>
+<script type="text/javascript">
+    window.onresize = function () {
+        myChart.resize();
+        myChart0.resize();
+        myChart01.resize();
+        myChart11.resize();
+        myChart21.resize();
+        myChart31.resize();
+        myChart41.resize();
+        myChart51.resize();
+        myChart61.resize();
+        myChart71.resize();
+
+    };
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        myChart.resize();
+        myChart0.resize();
+        myChart01.resize();
+        myChart11.resize();
+        myChart21.resize();
+        myChart31.resize();
+        myChart41.resize();
+        myChart51.resize();
+        myChart61.resize();
+        myChart71.resize();
+    });
+    $(document).ready(function() {
+        $("#ios").removeClass("active");
+        $("#jmeter").removeClass("active");
+        $("#ejb").removeClass("active");
+    });
+
+</script><!民心相同，出境旅游人数，留学人数>
+
+</body>
+</html>
